@@ -1,0 +1,21 @@
+from fastapi import FastAPI
+import random
+
+app = FastAPI()
+
+
+@app.get('/')
+async def root():
+    return {'example': 'This is example 1', 'data': 72}
+
+
+@app.get('/random')
+async def get_random():
+    rn: int = random.randint(0, 100)
+    return {'Number': rn, 'limit': 100}
+
+
+@app.get('/random/{limit}')
+async def get_random(limit: int):
+    rn: int = random.randint(0, limit)
+    return {'Number': rn, 'limit': limit}
