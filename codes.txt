@@ -1,0 +1,10 @@
+install fast api
+
+pip3 install fastapi[all]
+pip3 install fastapi "uvicorn[standard]"
+
+// to run
+uvicorn main:app --reload
+
+// create requirements.txt
+pip3 freeze > requirements.txt
